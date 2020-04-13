@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-html</title>
+</head>
+<body>
+    <div class="app">
+        <div v-html="p"></div>
+        <div>{{span}}</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:".app",
+            data:{
+                p:"<p>这是利用v-html解析出来的P标签</p>",
+                span:"<span>这是没有利用v-html解析出来的Span标签</span>"
+            }
+        });
+    </script>
+</body>
+</html>
