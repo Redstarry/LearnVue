@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-for</title>
+</head>
+<body>
+    <div class="app">
+        <p v-for="item in Arry">{{item}}</p>
+        <ul v-for="item in JsonData">
+            <li>{{item.Name}}</li>
+            <li>{{item.Age}}</li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:".app",
+            data:{
+                Arry:["小明", "小红", "小江"],
+                JsonData:[
+                    {"Name":"小明", "Age":18},
+                    {"Name":"小美", "Age":17}
+                ]
+            }
+        });
+    </script>
+</body>
+</html>
