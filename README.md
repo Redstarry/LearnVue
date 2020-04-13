@@ -9,3 +9,4 @@
 
 ## 02-Day
 
+学习了 v-once, v-html, v-bind, v-on

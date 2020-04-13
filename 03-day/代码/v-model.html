@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-model</title>
+</head>
+<body>
+    <div class="app">
+        <p>{{message}}</p>
+        <input type="text" v-model= "message">
+        <input type="text" v-model= "Name">
+        <button @click = "send()">发送</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:".app",
+            data:{
+                message:"Hello Vue!",
+                Name:""
+            },
+            methods:{
+                send:function(){
+                    console.log(this.Name);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

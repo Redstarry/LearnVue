@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算属性之基础例子</title>
+</head>
+<body>
+    <div class="app">
+        <p>{{message}} 的倒序是：{{reversedMessage}}</p>
+        <p>{{RMB}}人民币转换成美元是：{{money}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:".app",
+            data:{
+                message:"I Love You",
+                RMB:3700
+            },
+            computed:{
+                reversedMessage:function(){
+                    return this.message.split("").reverse().join("");
+                },
+                money:function(){
+                    return "$" + this.RMB * 8;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
