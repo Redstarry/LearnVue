@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>绑定HTML-Class</title>
+    <style>
+        .container
+        {
+            width: 100px;
+            height: 100px;
+            background-color: burlywood;
+            display: block;
+        }
+        .main
+        {
+            width: 100px;
+            height: 100px;
+            border:1px solid red;
+        }
+        .active
+        {
+           display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div :class="{active: IsShow}" class = "container">
+        </div>
+        <div class = "main" :class="{'bg-info':IsBgColor, 'text-danger':IsTextColor}">添加2个class</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:".app",
+            data:{
+                IsShow:true,
+                IsBgColor:true,
+                IsTextColor:true
+            }
+        });
+    </script>
+</body>
+</html>

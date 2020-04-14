@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>绑定HTML-Class之对象集合</title>
+</head>
+<body>
+    <div class="app">
+        <div class="container" :class="objectClass">添加class集合，其中包含多个class</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:".app",
+            data:{
+                objectClass:{
+                    'bg-info':true,
+                    'text-danger':true
+
+                }
+            }
+        });
+    </script>
+</body>
+</html>

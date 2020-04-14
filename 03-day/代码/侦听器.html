@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>侦听器</title>
+</head>
+<body>
+    <div class="app">
+        <ul v-for="value in JsonData">
+            <li>{{value.Name}}</li>
+            <li>{{value.Age}}</li>
+            <li>{{value.Sex}}</li>
+        </ul>
+        <input type="text" v-model="message">
+        <p>{{answer}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:".app",
+            data:{
+                JsonData:[
+                    {"Name":"小明", "Age":18, "Sex":"男"},
+                    {"Name":"小美", "Age":17, "Sex":"女"}
+                ],
+                answer:"空闲中...",
+                message:""
+            },
+            watch:{
+                JsonData:function(NewValue){
+                    console.log(NewValue);
+                },
+                message:function(){
+                    this.answer = this.message? "输入中...":"空闲中...";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
